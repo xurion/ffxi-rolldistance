@@ -96,7 +96,7 @@ function update_text()
         local colour = "\\cs(150,150,150)" --grey
 
         if party_member.zone == group.p0.zone then
-            if not party_member.mob.valid_target then
+            if not party_member.mob or not party_member.mob.valid_target then
                 all_in_range = false
                 distance = '??'
                 colour = "\\cs(255,255,255)" --white
@@ -110,6 +110,8 @@ function update_text()
                     colour = "\\cs(0,255,0)" --green
                 end
             end
+        else
+            all_in_range = false
         end
         distance = tostring(distance)
         if #distance == 1 then distance = ' ' .. distance end

@@ -8,6 +8,7 @@ Tracks and displays the distance between you and other party members so you know
 
 * Green = in range.
 * White = not in range.
+* ?? = in zone, over 50 yalms away.
 * -- = not in zone.
 
 If everyone is in range, the background turns green.
