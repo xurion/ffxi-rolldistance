@@ -96,13 +96,19 @@ function update_text()
         local colour = "\\cs(150,150,150)" --grey
 
         if party_member.zone == group.p0.zone then
-            distance = math.ceil(math.sqrt(party_member.mob.distance))
-
-            if settings.luzaf and distance > 16 or not settings.luzaf and distance > 8 then
-                colour = "\\cs(255,255,255)" --white
+            if not party_member.mob.valid_target then
                 all_in_range = false
+                distance = '??'
+                colour = "\\cs(255,255,255)" --white
             else
-                colour = "\\cs(0,255,0)" --green
+                distance = math.ceil(math.sqrt(party_member.mob.distance))
+
+                if settings.luzaf and distance > 16 or not settings.luzaf and distance > 8 then
+                    colour = "\\cs(255,255,255)" --white
+                    all_in_range = false
+                else
+                    colour = "\\cs(0,255,0)" --green
+                end
             end
         end
         distance = tostring(distance)
