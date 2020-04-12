@@ -20,7 +20,7 @@ Toggles whether you're using Luzaf's Ring for double range. Phantom Roll range i
 
 Default: true
 
-### //rd interval <number>
+### //rd interval &lt;number&gt;
 
 Sets the refresh interval to the given number of seconds.
 
